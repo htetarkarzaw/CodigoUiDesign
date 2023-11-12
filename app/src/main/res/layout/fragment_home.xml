@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="8dp"
+    tools:context=".ui.home.HomeFragment">
+
+    <ImageView
+        android:id="@+id/ivLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/img_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivNoti"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/ic_noti"
+        app:layout_constraintBottom_toBottomOf="@id/ivLogo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/ivLogo" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivLogo">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/vpImage"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@color/black"
+                app:layout_constraintDimensionRatio="W,3:5"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.zhpan.indicator.IndicatorView
+                android:id="@+id/indicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:vpi_slider_checked_color="@color/colorPrimary"
+                app:vpi_slider_normal_color="@color/white"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toBottomOf="@id/vpImage"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <RelativeLayout
+                android:id="@+id/rlMap"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="16dp"
+                app:layout_constraintEnd_toStartOf="@+id/rlInhabitants"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/vpImage">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/ivMap"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="0dp"
+                    android:background="@color/md_grey_300"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_map"
+                    app:shapeAppearance="@style/Circular" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/ivMap"
+                    android:layout_centerHorizontal="true"
+                    android:text="@string/map" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlInhabitants"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="16dp"
+                app:layout_constraintEnd_toStartOf="@+id/rlShows"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/rlMap"
+                app:layout_constraintTop_toBottomOf="@id/vpImage">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/ivInhabitants"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_centerHorizontal="true"
+                    android:background="@color/md_grey_300"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_inhabitants"
+                    app:shapeAppearance="@style/Circular" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/ivInhabitants"
+                    android:layout_centerHorizontal="true"
+                    android:text="@string/inhabitants" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlShows"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="16dp"
+                app:layout_constraintEnd_toStartOf="@+id/rlShopping"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/rlInhabitants"
+                app:layout_constraintTop_toBottomOf="@id/vpImage">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/ivShows"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_centerHorizontal="true"
+                    android:background="@color/md_grey_300"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_shows"
+                    app:shapeAppearance="@style/Circular" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/ivShows"
+                    android:layout_centerHorizontal="true"
+                    android:text="@string/shows" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlShopping"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:paddingTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/rlShows"
+                app:layout_constraintTop_toBottomOf="@id/vpImage">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/ivShopping"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_centerHorizontal="true"
+                    android:background="@color/md_grey_300"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_shopping"
+                    app:shapeAppearance="@style/Circular" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/ivShopping"
+                    android:layout_centerHorizontal="true"
+                    android:text="@string/shopping" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlDine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="16dp"
+                app:layout_constraintEnd_toEndOf="@id/rlMap"
+                app:layout_constraintStart_toStartOf="@id/rlMap"
+                app:layout_constraintTop_toBottomOf="@id/rlMap">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/ivDine"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="0dp"
+                    android:background="@color/md_grey_300"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_dine"
+                    app:shapeAppearance="@style/Circular" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/ivDine"
+                    android:layout_centerHorizontal="true"
+                    android:text="@string/dine" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlMeet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="16dp"
+                app:layout_constraintEnd_toEndOf="@id/rlInhabitants"
+                app:layout_constraintStart_toStartOf="@id/rlInhabitants"
+                app:layout_constraintTop_toBottomOf="@id/rlInhabitants">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/ivMeet"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="0dp"
+                    android:background="@color/md_grey_300"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_meet_greet"
+                    app:shapeAppearance="@style/Circular" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/ivMeet"
+                    android:layout_centerHorizontal="true"
+                    android:text="@string/meet_amp_greet" />
+            </RelativeLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:layout_constraintTop_toBottomOf="@id/rlDine" />
+
+            <TextView
+                android:id="@+id/tvUpcomingShow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/upcoming_shows"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rvCard" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="View all"
+                android:textColor="@color/colorPrimary"
+                app:layout_constraintBottom_toBottomOf="@id/tvUpcomingShow"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tvUpcomingShow" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvShow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:layout_constraintTop_toBottomOf="@id/tvUpcomingShow" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

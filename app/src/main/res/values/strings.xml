@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Codigo Ui Design</string>
+    <string name="title_home">Home</string>
+    <string name="title_wallet">Wallet</string>
+    <string name="title_more">More</string>
+    <string name="map">Map</string>
+    <string name="inhabitants">Inhabitants</string>
+    <string name="shows">Shows</string>
+    <string name="shopping">Shopping</string>
+    <string name="meet_amp_greet"><![CDATA[Meet & Greet]]></string>
+    <string name="dine">Dine</string>
+    <string name="upcoming_shows">Upcoming Shows</string>
+    <string name="detail_description">With its wide, alligator-like snout and razor-sharp teeth, it\'s easy to see how this fish acquired its name. Despite its ferocious appearance, the alligator gar poses little threat to human beings.
+They prefer to lie and wait for unsuspecting prey within reach, before lunging forward to grab their prey.
+As the largest species in the gar family, the alligator gar can reach up to 3 metres in length.
+Scientists have traced this species in fossil records dating back to 100 million years ago, hence they are also known as living fossils!</string>
+</resources>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.htetarkarzaw.codigouidesign.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_detailBSFragment"
+            app:destination="@id/detailBSFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_wallet"
+        android:name="com.htetarkarzaw.codigouidesign.ui.wallet.WalletFragment"
+        android:label="@string/title_wallet"
+        tools:layout="@layout/fragment_wallet" />
+
+    <fragment
+        android:id="@+id/navigation_more"
+        android:name="com.htetarkarzaw.codigouidesign.ui.more.MoreFragment"
+        android:label="@string/title_more"
+        tools:layout="@layout/fragment_more" />
+    <dialog
+        android:id="@+id/detailBSFragment"
+        android:name="com.htetarkarzaw.codigouidesign.ui.detail.DetailBSFragment"
+        android:label="DetailBSFragment" />
+</navigation>
